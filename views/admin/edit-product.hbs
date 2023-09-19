@@ -1,33 +1,68 @@
-
+{{! edit product }}
 <section>
 
-  <div class="container">
+  <div class='container'>
 
-    <div class="row">
+    <div class='row'>
 
-      <div class="col-md-6">
+      <div class='col-md-6'>
 
-        <h2 class="text-center">Edit product</h2>
+        <h2 class='text-center'>Edit product</h2>
 
-        <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+        <form
+          action='/admin/edit-product/{{product._id}}'
+          method='post'
+          enctype='multipart/form-data'
+        >
 
-          <label for="fname">Name</label><br />
-          <input type="text" name="name" class="form-control" value="{{product.name}}" /><br />
+          <label for='fname'>Name</label><br />
+          <input
+            type='text'
+            name='name'
+            class='form-control'
+            value='{{product.name}}'
+          /><br />
 
-          <label for="lname">Category</label><br />
-          <input type="text" name="category" class="form-control" value="{{product.category}}"/><br />
+          <label for='lname'>Category</label><br />
+          <input
+            type='text'
+            name='category'
+            class='form-control'
+            value='{{product.category}}'
+          /><br />
 
-          <label for="fname">Price</label><br />
-          <input type="text" name="price" class="form-control" value="{{product.price}}"/><br />
+          <label for='fname'>Price</label><br />
+          <input
+            type='text'
+            name='price'
+            class='form-control'
+            value='{{product.price}}'
+          /><br />
 
-          <label for="lname">Description</label><br />
-          <input type="text" name="description" class="form-control" value="{{product.description}}"/><br />
+          <label for='lname'>Description</label><br />
+          <input
+            type='text'
+            name='description'
+            class='form-control'
+            value='{{product.description}}'
+          /><br />
 
-          <label for="lname">image</label>
-          <img src="/product-images/{{product._id}}.jpg" alt="" style="width: 100px;height:100px;" id="imgView" class="pt-3">
-          <input type="file" name="image" class="form-control" onchange="viewImage(event)"/><br />
+          <label for='lname'>image</label>
+          <img
+            src='/product-images/{{product._id}}.jpg'
+            alt=''
+            style='width: 100px;height:100px;'
+            id='imgView'
+            class='pt-3'
+          />
+          <input
+            type='file'
+            name='image'
+            class='form-control'
+            onchange='viewImage(event)'
+          /><br />
 
-          <button type="submit " class="btn btn-success mt-4">submit</button>
+          <button type='submit ' class='btn btn-success mt-4'>submit</button>
 
         </form>
 
@@ -40,7 +75,7 @@
 </section>
 
 <script>
-    function viewImage(event){
-        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
-    }
+  function viewImage(event){
+  document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+  }
 </script>
